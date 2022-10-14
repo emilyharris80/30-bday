@@ -1,0 +1,41 @@
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>I hope you can make it!</h1>
+        </div>
+    
+        <div>
+            <form class="form" action="/home" method="get">
+                <label for="fname" class="fname">Name:</label><br>
+                <input type="text" id="fname" name="fname"><br>
+                <br>
+                <p>Will you be at the party?</p>
+                <div class="radio-toolbar">
+                    <input type="radio" id="yes" name="reply" value="yes">
+                    <label for="yes">YES! It's party time!</label><br>
+                    <input type="radio" id="no" name="reply" value="no">
+                    <label for="no">Sorry, I can't make it!</label><br>
+    
+                </div>
+                <input type="submit" id="submit" name="submit" value="submit">
+            </form>
+        </div>
+        <%# <ul id='list'>LIST OF ATTENDEES</ul> %>
+    </div>
+    <ul id='list'>LIST OF ATTENDEES</ul>
+
+
+    
+    <script>
+        document.getElementById("submit").onclick = function(event) {
+    //First things first, we need our text:
+    
+     var node = document.createElement("Li");
+    var text = document.getElementById("fname").value; 
+    var textnode=document.createTextNode(text);
+    node.appendChild(textnode);
+    var list = document.getElementById("list").appendChild(node);
+    // event.preventDefault();
+}
+    </script>
+</body>
